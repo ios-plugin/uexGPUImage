@@ -11,7 +11,8 @@
 #import "ImageHandler.h"
 @implementation EUExImageFilter
 -(void)open:(NSMutableArray *)inArguments{
-    ACArgsUnpack(NSString *imagePath,ACJSFunctionRef *fun) = inArguments;
+    ACArgsUnpack(NSDictionary *info,ACJSFunctionRef *fun) = inArguments;
+    NSString *imagePath = info[@"path"];
     if (!imagePath) {
         return;
     }
